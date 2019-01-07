@@ -1,0 +1,13 @@
+sass:
+    style: compressed
+
+plugins:
+  - jekyll-seo-tag
+
+copyright: "&copy; 2019 Jason Truesdell. All rights reserved."
+
+navigation:
+  Home: '/'
+
+github_username: JasonTrue
+twitter_username: YuzuTenCo

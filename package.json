@@ -1,0 +1,14 @@
+{
+  "name": "jekyll-theme-jagaimo-one",
+  "version": "0.0.1",
+  "description": "Jekyll Theme for Jason Truesdell's github page",
+  "main": "bundle.js",
+  "author": "Jason Truesdell <jason@yuzuten.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.28.3"
+  }
+}

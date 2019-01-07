@@ -1,0 +1,166 @@
+/* This styling will probably need to be factored out into modules
+   but I'm not yet 100% sure what I want the site to look like,
+   so this it's still pretty hastily coded. I'll extract things out into
+   separate files when I'm a little surer what I want.
+ */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  font-family: $proportional-body-font;
+}
+pre {
+  font-family: $fixed-code-font;
+}
+* {box-sizing: border-box; }
+
+h1 h2 h3 h4 h5 h6 {
+  font-family: $header-font;
+}
+nav, .page-content, aside, footer { padding: 5px}
+
+@media (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  nav {
+    order: 1;
+  }
+  aside {
+    order: 2;
+  }
+  posts {
+    order: 2;
+  }
+  .about {
+    order: 3;
+  }
+  .page-content {
+    order: 1;
+  }
+  footer {
+    order: 3;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    height: auto;
+    grid-gap: 1rem;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr repeat(auto-fit, minmax(500px,1fr)) auto;
+
+    grid-auto-rows: min-content max-content auto;
+    grid-template-areas:
+        "navbar  navbar navbar"
+        "sidebar main about"
+        "sidebar main posts"
+        "footer footer footer";
+  }
+  .about {
+    border-radius: 5px;
+  }
+  footer {
+    text-align: center;
+    div {
+      display: inline-block;
+      padding: .25em;
+    }
+  }
+}
+ul, menu, dir { padding-inline-start: 0px;}
+
+.page-content ul { padding-inline-start: 1.5em;}
+
+nav {
+  grid-area: navbar;
+  background-color: #253B4A;
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+    }
+  }
+  > ul > li {
+    border-right: 1px dotted gray;
+    padding-left: 3px;
+    &:last-child {
+      border: 0;
+    }
+    &:first-child {
+      padding-left: 0px;
+    }
+  }
+  @include unprominent-links(pink);
+  @include color-links(white, white, white, white);
+}
+
+.about {
+  grid-area: about;
+  background-color: $about-section-background-color;
+  color: $about-section-text-color;
+  padding: 1rem;
+}
+
+aside {
+  grid-area: sidebar;
+  background-color: $sidebar-background-color;
+  color: $sidebar-text-color;
+  padding: 3px;
+  @include unprominent-links(yellow);
+  @include color-links(black, black, black, darkgray);
+
+}
+
+.page-content {
+  grid-area: main;
+  background-color: $main-content-background-color;
+  color: $main-content-text-color;
+  width: 100%;
+  height: 100%;
+}
+
+.posts {
+  grid-area: posts;
+  background-color: $posts-background-color;
+}
+
+footer {
+  grid-area: footer;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  @include color-links(lightyellow, lightyellow, yellow, lightgray);
+  padding: 0.5em;
+}
+
+
+ul.social-media-list {
+  list-style: none;
+  margin-left: 0;
+  padding-inline-start:3px;
+}
+
+.social-media-list a:hover {
+  text-decoration: none;
+
+  .username {
+    text-decoration: underline;
+  }
+}
+
+.post-title {
+  @include color-links(blue, blue, red, red);
+  @include unprominent-links(yellow);
+}
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: #{$grey-color};
+    padding-right: 0px;
+    vertical-align: text-top;
+}

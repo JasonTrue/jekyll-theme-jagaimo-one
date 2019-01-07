@@ -1,0 +1,37 @@
+---
+---
+$header-font: 'Arial', sans serif;
+$proportional-body-font: 'Calibri', serif;
+$fixed-code-font: 'Fira Code', 'Inconsolata', 'Consolas', sans serif;
+
+//Probably want to move a few other hand-coded items into variables.
+//But this is just a quick & dirty extraction for the first iteration.
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+$main-content-background-color: white;
+$main-content-text-color: black;
+$about-section-background-color: darkblue;
+$about-section-text-color: white;
+$sidebar-background-color: #E3E386 ;
+$sidebar-text-color: black;
+$posts-background-color: white;
+$posts-text-color: black;
+$footer-background-color: black;
+$footer-text-color: white;
+
+@mixin color-links($link, $visited, $hover, $active) {
+  a:link { color: $link; }
+  a:active { color: $active; }
+  a:visited { color: $visited; }
+  a:hover { color: $hover; }
+}
+
+@mixin unprominent-links($background-color) {
+  a { text-decoration: none; }
+  a:hover { background-color: $background-color; }
+}
+
+@import "main";
+@import "_syntax-highlighting";
