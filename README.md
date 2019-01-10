@@ -11,10 +11,12 @@ add it to your own site with the Installation instructions below.
 ## Sample
 
 It's not particularly snazzy, but you can see the theme
-[in action here](https://jagaimo-one.jekyll-themes.yuzuten.com)
+[in action here](https://jagaimo-one.jekyll-themes.yuzuten.com).
 
 I'll most likely update it gradually as I add features (and have time).
- 
+
+It's probable I'm using this for my own [Github personal page](https://jasontrue.github.io). 
+
 ## Installation
 
 Add this line to your Jekyll site's `Gemfile`:
