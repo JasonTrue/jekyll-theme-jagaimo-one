@@ -62,7 +62,7 @@ nav, .page-content, aside, footer { padding: 5px}
     height: auto;
     grid-gap: 1rem;
     grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: auto 1fr 1fr repeat(auto-fit, minmax(500px,1fr)) auto;
+    grid-template-rows: auto 1fr minmax(0,max-content) repeat(auto-fit, minmax(500px,1fr)) auto;
 
     grid-auto-rows: min-content max-content auto;
     grid-template-areas:
