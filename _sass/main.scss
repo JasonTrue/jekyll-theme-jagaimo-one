@@ -15,10 +15,14 @@ pre {
 }
 * {box-sizing: border-box; }
 
-h1 h2 h3 h4 h5 h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $header-font;
 }
 nav, .page-content, aside, footer { padding: 5px}
+
+nav, .about, footer {
+  font-family: $navigation-font;
+}
 
 @media print{
   a:after{
